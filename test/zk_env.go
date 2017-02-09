@@ -76,6 +76,11 @@ func (z *ZkEnv) NewClientTimeout(timeout time.Duration) *enhanced.Client {
 	return client
 }
 
+// ConnectionString returns the connection string of ZooKeeper cluster.
+func (z *ZkEnv) ConnectionString() string {
+	return z.zkCluster.ConnectionString()
+}
+
 // Zk returns ZooKeeper cluster.
 func (z *ZkEnv) Zk() *ZkCluster {
 	return z.zkCluster
