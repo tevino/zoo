@@ -10,7 +10,7 @@ func (l *ErrorListener) Handle(e error) {
 	l.fn(e)
 }
 
-// NewErrorListener creates ErrorListener with fn.
+// NewErrorListener creates ErrorListener from fn.
 func NewErrorListener(fn func(error)) *ErrorListener {
 	return &ErrorListener{fn}
 }

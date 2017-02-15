@@ -14,6 +14,7 @@ type Client struct {
 	namespace
 	nsBasicOperations
 	watchOperations
+	*eventWatcher
 }
 
 // Connect establishes a new connection to a pool of zookeeper
@@ -44,6 +45,7 @@ func newClient(conn *zk.Conn, eventUpdate <-chan zk.Event) *Client {
 		closed:    c.closed,
 		Conner:    c,
 	}
+	c.eventWatcher = newEventWatcher(eventUpdate, c.closed, c)
 	return c
 }
 
