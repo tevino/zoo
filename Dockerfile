@@ -1,6 +1,7 @@
 FROM zookeeper:3.4.9
 
 ### Golang 1.7.4
+### https://hub.docker.com/r/library/golang/
 RUN apk add --no-cache ca-certificates
 
 ENV GOLANG_VERSION 1.7.4
